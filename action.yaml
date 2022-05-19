@@ -1,0 +1,12 @@
+name: KindJeff
+description: Export all repo's secrets to environment variables without knowing their names
+inputs:
+  secrets-json:
+    description: "a json object you want to export it's k/v to env var"
+    required: true
+runs:
+  using: node16
+  main: main.js
+branding:
+  icon: 'key'  
+  color: 'green'

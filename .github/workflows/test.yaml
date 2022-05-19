@@ -1,0 +1,16 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Test secrets2env
+    steps:
+      - uses: sljeff/secrets2env@main
+        with:
+          secrets-json: ${{ toJson(secrets) }}
+      - name: Print Secrets
+        run: |
+          echo $TEST_SECRET_1  # hello
+          echo ${#TEST_SECRET_1}
+          echo $TEST_SECRET_2  # theworld
+          echo ${#TEST_SECRET_2}
